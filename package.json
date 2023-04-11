@@ -1,0 +1,24 @@
+{
+  "name": "next_education-oracle",
+  "version": "1.0.0",
+  "description": "Este es el curso de ORACLE AluraLATAM ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrisDaniel/CURSO-OracleONE-AluraLATAM.git"
+  },
+  "keywords": [
+    "oracle",
+    "NextEducation",
+    "AluraLatam"
+  ],
+  "author": "Revoredo Cristian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrisDaniel/CURSO-OracleONE-AluraLATAM/issues"
+  },
+  "homepage": "https://github.com/CrisDaniel/CURSO-OracleONE-AluraLATAM#readme"
+}

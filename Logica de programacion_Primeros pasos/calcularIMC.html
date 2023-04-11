@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+    <h1>CALCULAR EL IMC</h1>
+    <script>
+        function imprimir(parametro){
+            document.write(parametro);
+        }
+
+        function saltarLinea(){
+            document.write("<br>")
+        }
+
+        function indiceMasaCorporal(peso, altura, nombre){
+            let indiceMasaCorporal = peso / (altura * altura);
+            imprimir(`El indice de masa corporal de ${nombre} es: ${indiceMasaCorporal.toFixed(3)}`);
+            saltarLinea();  
+        }
+
+        var persona1 = "Cielo";
+        let alturaA = 1.57;
+        let pesoA = 60.01;
+
+        var persona2 = "Daniel";
+        let alturaB = 1.54;
+        let pesoB = 42.01;
+
+        indiceMasaCorporal(pesoA, alturaA, persona1);
+        indiceMasaCorporal(pesoB, alturaB, persona2);
+    </script>
+</body>
+</html>

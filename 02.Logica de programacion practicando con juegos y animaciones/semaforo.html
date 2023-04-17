@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEMAFORO</title>
+</head>
+<body>
+    <h1>Semaforo</h1>
+    <canvas width="80" height="700"></canvas>
+    <script>
+        let pantalla = document.querySelector("canvas");
+        let pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle = "cyan";
+        pincel.fillRect(0, 0, 80, 200);
+        pincel.strokeStyle = "darkblue";
+        pincel.strokeRect(0, 0, 80, 200);
+
+        function dibujarSemaforo(posicionX, posicionY, color){
+            
+            pincel.fillStyle = color;
+            pincel.fillRect(posicionX, posicionY, 50, 50);
+
+            //Contorno
+            pincel.strokeStyle = "darkblue";
+            pincel.strokeRect(posicionX, posicionY, 50, 50);
+        }
+        //Luces
+        dibujarSemaforo(15, 22, "green");
+        dibujarSemaforo(15, 75, "yellow");
+        dibujarSemaforo(15, 128, "red");
+
+        //Soporte del semaforo
+        pincel.fillStyle = "black";
+        pincel.fillRect(30, 200, 20, 500);
+    </script>
+</body>
+</html>

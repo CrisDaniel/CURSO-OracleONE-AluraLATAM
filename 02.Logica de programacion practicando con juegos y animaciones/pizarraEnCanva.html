@@ -13,13 +13,16 @@
         var pantalla = document.querySelector("canvas");
         var pincel = pantalla.getContext("2d");    
         pincel.fillStyle = "grey";
-        pincel.fillRect(0,0,1300,550); 
+        pincel.fillRect(0,0,1300,550);
+
+        let color = ["blue", "red", "green", "yellow", "cyan"]
+        let colorActual = 0;
         
         function dibujar(evento){
             let posicionX = evento.pageX - pantalla.offsetLeft;
             let posicionY = evento.pageY - pantalla.offsetTop;
 
-            pincel.fillStyle = "blue";
+            pincel.fillStyle = color[colorActual];
             pincel.beginPath();
             pincel.arc(posicionX,posicionY,5,0,2*3.14)
             pincel.fill();
@@ -47,6 +50,15 @@
             coordenadas.innerHTML = hora + " (x =  " + x + ", y = " + y + " )";
         }
 
+        //Alterar color
+        function alterarColor(){
+            colorActual++;
+            if(colorActual>= color.length) {
+             colorActual = 0;
+            }
+            return false;
+        }
+
         // Aquí viene la llamada a la función con el evento onmousemove
 
         pantalla.onmousedown = function(evento){
@@ -56,6 +68,8 @@
         pantalla.onmouseup = function(evento){
             pantalla.onmousemove = null;
         }
+
+        pantalla.oncontextmenu = alterarColor;
     </script>
     <div id="mostrar">Coordenadas</div>
     <div id="mostrar2">Coordenadas</div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANDERA</title>
+</head>
+<body>
+    <canvas id="canva1" width="600" height="400"></canvas>
+    <canvas id="canva2" width="600" height="400"></canvas>
+
+    <script>
+        //Bandera peruana
+        var pantalla = document.getElementById("canva1");
+        let pincel = pantalla.getContext("2d");
+
+        pincel.fillStyle = "cyan";
+        pincel.fillRect(0,0,600,400);       //(margen I y D, Margen Arr y Aba, Ancho, Alto)
+        
+        pincel.fillStyle = "red";
+        pincel.fillRect(0,0,200,400);
+
+        pincel.fillStyle = "red";
+        pincel.fillRect(400,0,200,400);
+
+        //Bandera Italiana
+        var pantalla2 = document.getElementById("canva2");
+        let pincel2 = pantalla2.getContext("2d");
+
+        pincel2.fillStyle = "lightgrey";
+        pincel2.fillRect(0,0,600,400);       //(margen I, Margen Arr, Ancho, Alto)
+        
+        pincel2.fillStyle = "green";
+        pincel2.fillRect(0,0,200,400);
+
+        pincel2.fillStyle = "red";
+        pincel2.fillRect(400,0,200,400);
+
+        //Triangulo
+        pincel2.fillStyle = "yellow";
+        pincel2.beginPath();
+        pincel2.moveTo(300, 200);
+        pincel2.lineTo(200, 400);
+        pincel2.lineTo(400, 400);
+        pincel2.fill();
+
+        //Circulo
+        pincel2.fillStyle = "blue";
+        pincel2.beginPath();
+        pincel2.arc(300,200,50,0,2*3.14)
+        pincel2.fill();
+
+    </script>
+</body>
+</html>

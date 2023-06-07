@@ -7,3 +7,41 @@
 .headerPrincipal-nav{
     display: flex;  /*Con flex en el contenedor padre, las clases hijas heredan sus propiedades como: align-items y justify-content*/
 }
+
+.contenidoPrincipal-cursos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenidoPrincipal-cursos-link{
+    display: flex;
+    width: 23%;
+}
+
+.rodapePrincipal-navMap-list{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    flex-wrap: wrap; /*Ya que con flex-direction: colum, todo se puso en una columna establecimos una altura pero utilizamos wrap para que, los elementos que sobrepasaban la altura se fueran a la siguiente columna*/
+}
+
+.rodapePrincipal-patrocinadores .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin-right: 5%;
+}
+
+.rodapePrincipal-contatoForm{
+    width: 25%;
+}
+
+.rodapePrincipal-contatoForm-fieldset{
+    display: flex;
+}

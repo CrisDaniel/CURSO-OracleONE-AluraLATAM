@@ -1,0 +1,9 @@
+.headerPrincipal .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*Ya que el flex hizo flexible todo el contenedor, este elemento agrega un espacio entre el titulo y el nav, lo suficiemte para que cada uno quede en el borde de los lados*/
+}
+
+.headerPrincipal-nav{
+    display: flex;  /*Con flex en el contenedor padre, las clases hijas heredan sus propiedades como: align-items y justify-content*/
+}

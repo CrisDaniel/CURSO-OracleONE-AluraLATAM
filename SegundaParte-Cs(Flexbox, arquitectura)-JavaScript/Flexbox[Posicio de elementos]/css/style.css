@@ -205,6 +205,11 @@ body {
 	outline: none;
 }
 
+.videoSobre-button:hover{
+	background-color: #d0604f;
+	cursor: pointer;
+}
+
 .rodapePrincipal-contatoForm-legend {
 	margin-bottom: 10px;
 }

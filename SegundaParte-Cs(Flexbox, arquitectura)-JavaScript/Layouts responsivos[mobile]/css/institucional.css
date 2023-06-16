@@ -67,8 +67,9 @@
     }
 
     .institucional__video {
-        /*align-self: flex-end;*/
+        align-self: flex-end;
         width: 375px;
+        margin-top: 0;
     }
 
     .institucional__contacto-email {

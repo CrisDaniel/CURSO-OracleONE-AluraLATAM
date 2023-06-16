@@ -30,6 +30,10 @@
     font-weight: 700;
 }
 
+.sobre-nosotros__imagen {
+    display: none;
+}
+
 @media screen and (min-width: 1024px) {
     .sobre_nosotros {
         display: flex;

@@ -7,24 +7,24 @@
     background: #f9f9f9;
 }
 
-.menu-lista{
+.menu__lista{
     display: flex;
 }
 
-.menu-item{
+.menu__item{
     list-style: none;
 }
 
-.menu-link{
+.menu__link{
     color: #808080;
     text-decoration: none;
     margin-right: 1.35rem;
 }
 
-.menu-link:hover{
+.menu__link:hover{
     text-decoration: underline;
 }
 
-.menu-link.activo{
+.menu__link.activo{
     color: #333333;
 }

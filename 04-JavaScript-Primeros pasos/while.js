@@ -3,7 +3,7 @@ const precioPasaje = [100, 30, 40, 60];
 const presupuestoDisponinle = 60;
 
 let i = 0;
-while(precioPasaje[i] > presupuestoDisponinle && i < ciudades.length){
+while(i < ciudades.length && precioPasaje[i] > presupuestoDisponinle){
     i++;
 }
 

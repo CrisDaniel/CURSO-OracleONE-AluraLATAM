@@ -1,4 +1,5 @@
 ```js
+Para encender la bd:
 json-server --watch db.json
 ```
 

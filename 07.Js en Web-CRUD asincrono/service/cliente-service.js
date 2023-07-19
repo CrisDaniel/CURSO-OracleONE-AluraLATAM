@@ -30,9 +30,19 @@ const table = document.querySelector("[data-table]");
 //Update    -   PUT/PATCH
 //Delete    -   DELETE
 
-const listaClientes = () => {
-  const promesa = new Promise((resolve, reject) => {
+//Todo este codigo es igual a la de abajo - Primera forma de crear una solicitud http GET - Recomendada
+const listaClientes = () => fetch("http://localhost:3000/perfil").then((respuesta) => respuesta.json());
+console.log(listaClientes()); 
 
+//Todo - Segunda forma de conectar
+/*const listaClientes = () => {
+  return fetch("http://localhost:3000/perfil").then((respuesta) => respuesta.json());
+}*/
+
+//Todo - Tercera forma de conectar
+/*const listaClientes = () => {
+
+  const promesa = new Promise((resolve, reject) => {
     const http = new XMLHttpRequest(); //instancia de la clase XMLHttpRequest: proporciona funcionalidad para realizar solicitudes HTTP asíncronas desde un navegador web.
 
     http.open("GET", "http://localhost:3000/perfil");   //Configuramos la solicitud http al servidor con el metodo open(metodo. url)
@@ -44,19 +54,16 @@ const listaClientes = () => {
       }else{
         resolve(respuesta);
       }
-    };
-    
+    }; 
   });
-  
   return promesa;
-};
-console.log(listaClientes()); 
+};*/
 
 listaClientes().then((perfil) => {
+  console.log(perfil)
   perfil.forEach(datos => {
       const nuevoCliente = crearCliente(datos.nombre, datos.email);
-      table.appendChild(nuevoCliente); 
+      table.appendChild(nuevoCliente);
   });
-  console.log(perfil);
 }).catch((error) => alert(`Ocurrio un ${error}`));
   

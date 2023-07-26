@@ -7,16 +7,16 @@
 //Delete    -   DELETE
 
 //Todo este codigo es igual a la de abajo - Primera forma de crear una solicitud http GET - Recomendada
-const listaClientes = () => fetch("http://localhost:3000/perfil").then((respuesta) => respuesta.json());
-console.log(listaClientes()); 
+const listarClientes = () => fetch("http://localhost:3000/perfil").then((respuesta) => respuesta.json());
+console.log(listarClientes()); 
 
 //Todo - Segunda forma de conectar
-/*const listaClientes = () => {
+/*const listarClientes = () => {
   return fetch("http://localhost:3000/perfil").then((respuesta) => respuesta.json());
 }*/
 
 //Todo - Tercera forma de conectar
-/*const listaClientes = () => {
+/*const listarClientes = () => {
 
   const promesa = new Promise((resolve, reject) => {
     const http = new XMLHttpRequest(); //instancia de la clase XMLHttpRequest: proporciona funcionalidad para realizar solicitudes HTTP asíncronas desde un navegador web.
@@ -37,15 +37,23 @@ console.log(listaClientes());
 
 const crearCliente = (nombre, email) =>{
   return fetch("http://localhost:3000/perfil", {
-    method: "POST",
-    headers: {
+    method: "POST",                                     //Enviado informacion para crear un nuevo cliente 
+    headers: {                                         //Se establece un encabezado de solicitud para confirmar que lo que se envia es de tipo JSON
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({nombre, email, id: uuid.v4()}),
+    body: JSON.stringify({nombre, email, id: uuid.v4()}), //Aqui se establece el cuerpo de la solicitud, "JSON.stringify" convierte un objeto en una cadena JSON
   });
 };
 
+const eliminarCliente = (id) => {
+  console.log("Eliminar a: ", id);
+  return fetch(`http://localhost:3000/perfil/${id}`, {  //Especificamos el cliente que se eliminara segun el "id"
+    method: "DELETE",
+  })
+}
+
 export const clienteServices = {
-  listaClientes,
+  listarClientes,
   crearCliente,
+  eliminarCliente,
 };

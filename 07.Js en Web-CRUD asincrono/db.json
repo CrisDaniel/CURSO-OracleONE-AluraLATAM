@@ -6,11 +6,6 @@
       "id": 1
     },
     {
-      "nombre": "Ciel Alura",
-      "email": "revoredoMeza@alura.com",
-      "id": 1
-    },
-    {
       "nombre": "Pantera",
       "email": "negra-wakanda@gmail.com",
       "id": "2bfde186-19bc-48b2-85e3-e53b49b9e596"
@@ -19,6 +14,11 @@
       "nombre": "Pamela",
       "email": "doritos123@gmail.com",
       "id": "3568982f-df0f-498e-8dd2-7649a839f3fb"
+    },
+    {
+      "nombre": "Juan Carlos",
+      "email": "juan.solsol@gmail.com",
+      "id": "44581615-54de-4ed8-bfcd-077d68209c0d"
     }
   ]
 }

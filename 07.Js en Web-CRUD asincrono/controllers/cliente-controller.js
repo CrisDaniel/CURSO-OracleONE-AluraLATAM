@@ -1,6 +1,6 @@
 import { clienteServices } from "../service/cliente-service.js"; 
 
-const crearCliente = (nombre, email) => {
+const crearCliente = (nombre, email, id) => {
     const linea = document.createElement("tr");
     const contenido = `
     <td class="td" data-td>${nombre}</td>
@@ -13,22 +13,34 @@ const crearCliente = (nombre, email) => {
           </a>
         </li>
         <li>
-          <button class="simple-button simple-button--delete" type="button">
+          <button class="simple-button simple-button--delete" type="button" id="${id}">
             Eliminar
           </button>
         </li>
       </ul>
     </td>`;
     linea.innerHTML = contenido;
+
+    const btn = linea.querySelector("button");
+    btn.addEventListener("click", () => {
+      const id = btn.id;
+      clienteServices.eliminarCliente(id).then((respuesta) => {
+        console.log(respuesta);
+      }).catch(err => console.log(err));
+    });
+
     return linea;
 }
 
 const table = document.querySelector("[data-table]");
 
-clienteServices.listaClientes().then((perfil) => {
-    console.log(perfil)
-    perfil.forEach(datos => {
-        const nuevoCliente = crearCliente(datos.nombre, datos.email);
+clienteServices.listarClientes().then((perfiles) => {
+    console.log(perfiles);
+
+    perfiles.forEach(datos => {
+      const {nombre, email, id} = datos
+        const nuevoCliente = crearCliente(nombre, email, id);
         table.appendChild(nuevoCliente);
     });
+
   }).catch((error) => alert(`Ocurrio un ${error}`));

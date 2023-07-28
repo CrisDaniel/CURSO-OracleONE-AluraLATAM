@@ -2,7 +2,7 @@
   "perfil": [
     {
       "nombre": "Cristian Daniel",
-      "email": "revoredo@alura.com",
+      "email": "christian.revoredo@alura.com",
       "id": 1
     },
     {
@@ -11,14 +11,19 @@
       "id": "2bfde186-19bc-48b2-85e3-e53b49b9e596"
     },
     {
-      "nombre": "Pamela",
-      "email": "doritos123@gmail.com",
+      "nombre": "Pamela Rosario",
+      "email": "doritos_rosa_123@gmail.com",
       "id": "3568982f-df0f-498e-8dd2-7649a839f3fb"
     },
     {
-      "nombre": "Juan Carlos",
-      "email": "juan.solsol@gmail.com",
+      "nombre": "Damian Carlos",
+      "email": "damian.solsol@gmail.com",
       "id": "44581615-54de-4ed8-bfcd-077d68209c0d"
+    },
+    {
+      "nombre": "Milan Rey",
+      "email": "milan.master@gmail.com",
+      "id": "2e916b46-7fe2-4b64-be94-a4f486689a31"
     }
   ]
 }

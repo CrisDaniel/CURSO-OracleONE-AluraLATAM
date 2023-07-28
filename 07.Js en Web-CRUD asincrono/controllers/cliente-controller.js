@@ -8,7 +8,7 @@ const crearCliente = (nombre, email, id) => {
     <td>
       <ul class="table__button-control">
         <li>
-          <a href="../screens/editar_cliente.html" class="simple-button simple-button--edit">
+          <a href="../screens/editar_cliente.html?id=${id}" class="simple-button simple-button--edit">
           Editar
           </a>
         </li>

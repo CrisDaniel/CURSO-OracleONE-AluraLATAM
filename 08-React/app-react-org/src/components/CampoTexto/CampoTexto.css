@@ -1,0 +1,22 @@
+.campo_text{
+    margin: 24px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.campo_text label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.campo_text input {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
+    border: none;
+    padding: 30px 20px;
+    outline-color: #6278f7; /*Cuando estemos en el input, se marque el borde color azul*/
+    font-size: 16px;
+}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Header from './components/header';
 import Formulario from './components/formulario';
-import MiOrg from './components/MiOrg';  
+import MiOrg from './components/MiOrg';
 
 function App() {
   //Estado - hooks

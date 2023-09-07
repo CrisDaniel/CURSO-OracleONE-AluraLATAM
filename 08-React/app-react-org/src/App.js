@@ -10,10 +10,18 @@ function App() {
   //const [nombreVariable, funcionActualizaLaVariable] = useState(valorInicial)
 
   const [mostrarFormulario, actualizarMostrar] = useState(false);
+  const [colaboradores, actualizarColaborador] = useState([]);
 
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario);
   }
+
+  //Registrar Colaborador
+  const registrarColaborador = (colaborador) => {
+    console.log("Regitrado!!", colaborador);
+    //spread operator
+    actualizarColaborador([...colaboradores, colaborador]);
+}
 
   const equipos = [
     {
@@ -56,7 +64,8 @@ function App() {
   return (
     <div>
       <Header/>
-      {mostrarFormulario === true ? <Formulario equiposNombre= {equipos.map( (equipo) => equipo.Titulo)}/> : <></>}
+      {mostrarFormulario === true ? 
+        <Formulario equiposNombre= {equipos.map( (equipo) => equipo.Titulo)} registrarColaborador = {registrarColaborador}/> : <></>}
       {/* {mostrarFormulario && <Formulario/>} */}
 
       <MiOrg cambiarMostrar={cambiarMostrar}/>

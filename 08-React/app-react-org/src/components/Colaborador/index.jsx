@@ -4,9 +4,10 @@ import './Colaborador.css';
 const Colaborador = (props) => {
 
     const {nombreIngresado, puestoIngresado, fotoIngresada, equipoSeleccionado} = props.datos
+    const {colorPrimario} = props
 
     return <div className='colaborador'>
-        <div className='encabezado'>
+        <div className='encabezado' style={{backgroundColor: colorPrimario}}>
             <img src={fotoIngresada} alt="Perfil" />
         </div>
         <div className='info'>

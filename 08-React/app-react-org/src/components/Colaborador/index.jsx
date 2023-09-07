@@ -3,7 +3,7 @@ import './Colaborador.css';
 
 const Colaborador = (props) => {
 
-    const {nombreIngresado, puestoIngresado, fotoIngresada, equipoSeleccionado} = props.datos
+    const {nombreIngresado, puestoIngresado, fotoIngresada} = props.datos
     const {colorPrimario} = props
 
     return <div className='colaborador'>

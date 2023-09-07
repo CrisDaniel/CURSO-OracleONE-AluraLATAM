@@ -4,13 +4,20 @@ import Header from './components/header';
 import Formulario from './components/formulario';
 import MiOrg from './components/MiOrg';
 import Equipo from './components/Equipo';
+import Footer from './components/Footer';
 
 function App() {
   //Estado - hooks
   //const [nombreVariable, funcionActualizaLaVariable] = useState(valorInicial)
 
   const [mostrarFormulario, actualizarMostrar] = useState(false);
-  const [colaboradores, actualizarColaborador] = useState([]);
+  const [colaboradores, actualizarColaborador] = useState([
+    
+    {fotoIngresada:"https://academico.unas.edu.pe/resources/Photos/Students/2018-1/022_002018013872967105.jpg",
+    equipoSeleccionado: "Front End",
+    nombreIngresado:"Cristian Daniel",
+    puestoIngresado:"Programador",}
+  ]);
 
   const cambiarMostrar = () => {
     actualizarMostrar(!mostrarFormulario);
@@ -73,6 +80,8 @@ function App() {
       {
         equipos.map( (equipo, index) => <Equipo datos={equipo} key={equipo.Titulo} colaboradores = {colaboradores.filter( colaborador => colaborador.equipoSeleccionado === equipo.Titulo)}/>)
       }
+
+      <Footer/>
 
     </div>
   );

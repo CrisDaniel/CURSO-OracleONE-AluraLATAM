@@ -1,12 +1,14 @@
 import './Colaborador.css';
+import {TiUserDelete} from 'react-icons/ti'
 //https://academico.unas.edu.pe/resources/Photos/Students/2018-1/022_002018013872967105.jpg img mio
 
 const Colaborador = (props) => {
 
     const {nombreIngresado, puestoIngresado, fotoIngresada} = props.datos
-    const {colorPrimario} = props
+    const {colorPrimario, eliminarColaborador} = props
 
     return <div className='colaborador'>
+        <TiUserDelete onClick={eliminarColaborador} className='eliminar'>Delete</TiUserDelete>
         <div className='encabezado' style={{backgroundColor: colorPrimario}}>
             <img src={fotoIngresada} alt="Perfil" />
         </div>

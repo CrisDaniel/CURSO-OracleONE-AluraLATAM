@@ -74,21 +74,18 @@ function App() {
 
   //Registrar Colaborador
   const registrarColaborador = (colaborador) => {
-    console.log("Regitrado!!", colaborador);
     //spread operator
     actualizarColaborador([...colaboradores, colaborador]);
   }
 
   //Eliminar colaborador
   const eliminarColaborador = (id) =>{
-    console.log("ELIMINADO: ", id);
     const nuevosColaboradores = colaboradores.filter((colaborador) => colaborador.id !== id);
     actualizarColaborador(nuevosColaboradores);
   }
 
   //Cambiar color de equipo
   const cambiarColor = (color, id) => {
-    console.log(color, id)
     const equiposActualizados = equipos.map((equipo) =>{
       if(equipo.id === id){
         equipo.colorPrimario = color;
@@ -100,11 +97,16 @@ function App() {
     actualizarEquipos(equiposActualizados);
   }
 
+  //Crear nuevo equipo
+  const crearEquipo = (nuevoEquipo) => {
+    actualizarEquipos([...equipos, {...nuevoEquipo, id: uuid()} ]);
+  }
+
   return (
     <div>
       <Header/>
       {mostrarFormulario === true ? 
-        <Formulario equiposNombre= {equipos.map( (equipo) => equipo.Titulo)} registrarColaborador = {registrarColaborador}/> : <></>}
+        <Formulario equiposNombre= {equipos.map( (equipo) => equipo.Titulo)} registrarColaborador = {registrarColaborador} crearEquipo={crearEquipo}/> : <></>}
       {/* {mostrarFormulario && <Formulario/>} */}
 
       <MiOrg cambiarMostrar={cambiarMostrar}/>

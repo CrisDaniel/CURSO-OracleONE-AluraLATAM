@@ -4,7 +4,6 @@ const CampoTexto = (props) =>{
 
     const manejarCambio = (evento) => {
         props.actualizarValor(evento.target.value);
-        console.log("evento");
     };
 
     const placeholder = `${props.placeholder}...`;

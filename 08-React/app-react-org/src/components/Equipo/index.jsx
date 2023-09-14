@@ -4,13 +4,13 @@ import hexToRgba from 'hex-to-rgba';
 
 const Equipo = (props) => {
 
-    const {colorPrimario, colorSecundario, Titulo} = props.datos
+    const {colorPrimario, Titulo, id} = props.datos
     const {colaboradores, eliminarColaborador, actualizarColor} = props;
 
     return <>
         {colaboradores.length > 0 && //Si la cantidad de colaboradores > 0, entonces devuelveme la parte de section y si no, no devuelvas nada
             <section className="equipo" style={{backgroundColor: hexToRgba(colorPrimario, 0.6)}}>
-                <input type="color" className="input-color" value = {colorPrimario} onChange={(eveto) => actualizarColor(eveto.target.value, Titulo)}/>
+                <input type="color" className="input-color" value = {colorPrimario} onChange={(eveto) => actualizarColor(eveto.target.value, id)}/>
                 <h3 style={{borderColor: colorPrimario}}>{Titulo}</h3>
                 <div className="colaboradores">
                     {

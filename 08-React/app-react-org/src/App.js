@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {v4 as uuid} from 'uuid';
 import './App.css';
 import Header from './components/header';
 import Formulario from './components/formulario';
@@ -13,34 +14,42 @@ function App() {
   const [mostrarFormulario, actualizarMostrar] = useState(false);
   const [colaboradores, actualizarColaborador] = useState([
     
-    {fotoIngresada:"https://academico.unas.edu.pe/resources/Photos/Students/2018-1/022_002018013872967105.jpg",
-    equipoSeleccionado: "Front End",
-    nombreIngresado:"Cristian Daniel",
-    puestoIngresado:"Programador",}
+    {
+      id: uuid(),
+      fotoIngresada:"https://academico.unas.edu.pe/resources/Photos/Students/2018-1/022_002018013872967105.jpg",
+      equipoSeleccionado: "Front End",
+      nombreIngresado:"Cristian Daniel",
+      puestoIngresado:"Programador",
+    }
   ]);
   const [equipos, actualizarEquipos] = useState(  
     [
       {
+        id: uuid(),
         Titulo: "Programacion",
         colorPrimario: "#57C278",
         colorSecundario: "#D9F7E9",
       },
       {
+        id: uuid(),
         Titulo: "Front End",
         colorPrimario: "#82CFFA",
         colorSecundario: "#E8F8FF",
       },
       {
+        id: uuid(),
         Titulo: "Data Science",
         colorPrimario: "#A6D157",
         colorSecundario: "#F0F8E2",
       },
       {
+        id: uuid(),
         Titulo: "Devops",
         colorPrimario: "#E06B69",
         colorSecundario: "#FDE7E8",
       },
       {
+        id: uuid(),
         Titulo: "Ux y Diseño",
         colorPrimario: "#DB6EBF",
         colorSecundario: "#FAE9F5",
@@ -51,6 +60,7 @@ function App() {
         colorSecundario: "#FFF5D9",
       },
       {
+        id: uuid(),
         Titulo: "Innovacion y Gestion",
         colorPrimario: "#FF8A29",
         colorSecundario: "#FFEEDF",
@@ -70,15 +80,17 @@ function App() {
   }
 
   //Eliminar colaborador
-  const eliminarColaborador = () =>{
-    console.log("ELIMINADO");
+  const eliminarColaborador = (id) =>{
+    console.log("ELIMINADO: ", id);
+    const nuevosColaboradores = colaboradores.filter((colaborador) => colaborador.id !== id);
+    actualizarColaborador(nuevosColaboradores);
   }
 
   //Cambiar color de equipo
-  const cambiarColor = (color, titulo) => {
-    console.log(color, titulo)
+  const cambiarColor = (color, id) => {
+    console.log(color, id)
     const equiposActualizados = equipos.map((equipo) =>{
-      if(equipo.Titulo === titulo){
+      if(equipo.id === id){
         equipo.colorPrimario = color;
       }
 

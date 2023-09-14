@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {v4 as uuid} from 'uuid';
 import "./Formulario.css";
 import CampoTexto from "../CampoTexto";
 import ListOpciones from "../listaOpciones";
@@ -17,6 +18,7 @@ const Formulario = (props) => {
     const enviarInformacion = (evento) =>{
         evento.preventDefault();
         const datosAEnviar = {
+            id: uuid(),
             nombreIngresado: nombre,
             puestoIngresado: puesto,
             fotoIngresada: foto,

@@ -48,7 +48,7 @@ const Formulario = (props) => {
         <form onSubmit={manejarNuevoEquipo}>
             <h2>Rellena el formulario para crear el colaborador.</h2>
             <CampoTexto titulo="Titulo" placeholder="Ingresar Titulo" required valor={Titulo} actualizarValor={actualizarTitulo}/>
-            <CampoTexto titulo="Color" placeholder="Ingresar Color en Hex" required valor={color} actualizarValor={actualizarColor}/>
+            <CampoTexto titulo="Color" placeholder="Ingresar Color en Hex" required valor={color} actualizarValor={actualizarColor} type="color"/>
             <Boton texto="Registrar equipo"/>
         </form>
     </section>

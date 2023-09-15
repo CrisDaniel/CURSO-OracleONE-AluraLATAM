@@ -14,7 +14,7 @@ const Formulario = (props) => {
     const [equipo, actualizarEquipo] = useState("");
 
     const [Titulo, actualizarTitulo] = useState("");
-    const [color, actualizarColor] = useState("");
+    const [color, actualizarColor] = useState("#FFFFFF");
 
     const {registrarColaborador, crearEquipo} = props;
 

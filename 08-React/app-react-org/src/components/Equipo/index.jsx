@@ -5,7 +5,7 @@ import hexToRgba from 'hex-to-rgba';
 const Equipo = (props) => {
 
     const {colorPrimario, Titulo, id} = props.datos
-    const {colaboradores, eliminarColaborador, actualizarColor} = props;
+    const {colaboradores, eliminarColaborador, actualizarColor, like} = props;
 
     return <>
         {colaboradores.length > 0 && //Si la cantidad de colaboradores > 0, entonces devuelveme la parte de section y si no, no devuelvas nada
@@ -18,7 +18,9 @@ const Equipo = (props) => {
                         datos = {colaborador} 
                         key={index} 
                         colorPrimario={colorPrimario}
-                        eliminarColaborador = {eliminarColaborador}/>)
+                        eliminarColaborador = {eliminarColaborador}
+                        like={like}
+                        />)
                     }
                 </div>
             </section>

@@ -20,6 +20,7 @@ function App() {
       equipoSeleccionado: "Front End",
       nombreIngresado:"Cristian Daniel",
       puestoIngresado:"Programador",
+      fav: true,
     }
   ]);
   const [equipos, actualizarEquipos] = useState(  
@@ -102,6 +103,17 @@ function App() {
     actualizarEquipos([...equipos, {...nuevoEquipo, id: uuid()} ]);
   }
 
+  const like = (id) => {
+    const colaboradoresActualizados = colaboradores.map((colaborador) => {
+      if(colaborador.id === id){
+        colaborador.fav = !colaborador.fav;
+      }
+      return colaborador;
+    })
+
+    actualizarColaborador(colaboradoresActualizados);
+  }
+
   return (
     <div>
       <Header/>
@@ -118,6 +130,7 @@ function App() {
         colaboradores = {colaboradores.filter( colaborador => colaborador.equipoSeleccionado === equipo.Titulo)}
         eliminarColaborador={eliminarColaborador}
         actualizarColor = {cambiarColor}
+        like={like}
         />)
       }
 

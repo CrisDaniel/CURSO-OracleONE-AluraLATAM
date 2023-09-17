@@ -20,15 +20,6 @@
   color: #41d3be;
 }
 
-.header {
-  background-color: #41d3be;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 15vw;
-  height: 10vh;
-  align-items: center;
-}
-
 .container {
   background-color: #f1f1f1;
   min-height: 90vh;
@@ -39,11 +30,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.imagen-logo {
-  height: 50px;
-  width: 50px;
 }
 
 .imagen-icono {

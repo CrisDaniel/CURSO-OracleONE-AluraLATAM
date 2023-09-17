@@ -24,8 +24,8 @@ const BtnHeader = styled.a`
   margin: 0 10px;
   font-weight: 600;
   border: 2px solid white;
-  color: ${ (props) => props.primary ? "white": colorPrimario};
-  background: ${ (props) => props.primary ? "transparent": "white"};
+  color: ${ (props) => props.$primary ? "white": colorPrimario};
+  background: ${ (props) => props.$primary ? "transparent": "white"};
 `;
 
 const Header = () => {
@@ -36,7 +36,7 @@ const Header = () => {
         <BtnHeader href="https://google.com">
           Ayuda
         </BtnHeader>
-        <BtnHeader primary href="https://google.com">
+        <BtnHeader $primary href="https://google.com">
           Salir
         </BtnHeader>
       </div>

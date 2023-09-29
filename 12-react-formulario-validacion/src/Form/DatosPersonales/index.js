@@ -34,7 +34,6 @@ const DatosPersonales = ({updateStep}) => {
           const value = input.target.value;
           const valid = validarNombre(value);
           setName({value, valid});
-          console.log(value, valid)
         }}
         error={name.valid === false}
         helperText={name.valid === false && "Ingresa caracteres de entre 1 - 30"}
@@ -50,7 +49,6 @@ const DatosPersonales = ({updateStep}) => {
           const value = input.target.value;
           const valid = validarApelllido(value);
           setLastName({value, valid});
-          console.log(value, valid)
         }}
         error={lastName.valid === false}
         helperText={lastName.valid === false && "Ingresa caracteres de entre 1 - 40"}
@@ -67,7 +65,6 @@ const DatosPersonales = ({updateStep}) => {
           const value = input.target.value;
           const valid = validarTelefono(value);
           setPhone({value, valid});
-          console.log(value, valid)
         }}
         error={phone.valid === false}
         helperText={phone.valid === false && "Ingresa 9 digitos"}
